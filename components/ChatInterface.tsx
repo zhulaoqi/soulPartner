@@ -64,16 +64,9 @@ export default function ChatInterface({ userInfo }: Props) {
     setInputValue("");
     setIsLoading(true);
 
-    // 创建一个空的助手消息，用于流式更新
+    // 准备助手消息的ID，但不立即创建消息
     const assistantMessageId = (Date.now() + 1).toString();
-    const assistantMessage: Message = {
-      id: assistantMessageId,
-      role: "assistant",
-      content: "",
-      timestamp: new Date(),
-    };
-
-    setMessages((prev) => [...prev, assistantMessage]);
+    let assistantMessageCreated = false;
 
     try {
       // 调用 API - 流式响应
@@ -117,30 +110,52 @@ export default function ChatInterface({ userInfo }: Props) {
         const chunk = decoder.decode(value, { stream: true });
         accumulatedContent += chunk;
 
-        // 更新助手消息的内容
-        setMessages((prev) =>
-          prev.map((msg) =>
-            msg.id === assistantMessageId
-              ? { ...msg, content: accumulatedContent }
-              : msg
-          )
-        );
+        // 第一次接收到数据时，创建助手消息
+        if (!assistantMessageCreated) {
+          const assistantMessage: Message = {
+            id: assistantMessageId,
+            role: "assistant",
+            content: accumulatedContent,
+            timestamp: new Date(),
+          };
+          setMessages((prev) => [...prev, assistantMessage]);
+          assistantMessageCreated = true;
+        } else {
+          // 后续更新助手消息的内容
+          setMessages((prev) =>
+            prev.map((msg) =>
+              msg.id === assistantMessageId
+                ? { ...msg, content: accumulatedContent }
+                : msg
+            )
+          );
+        }
       }
     } catch (error) {
       console.error("发送消息失败:", error);
 
-      // 错误处理 - 更新助手消息为错误提示
-      setMessages((prev) =>
-        prev.map((msg) =>
-          msg.id === assistantMessageId
-            ? {
-                ...msg,
-                content:
-                  "抱歉，我现在遇到了一些技术问题。请稍后再试，或者检查一下网络连接。如果问题持续存在，可能需要配置 API 密钥。",
-              }
-            : msg
-        )
-      );
+      // 错误处理 - 创建或更新错误消息
+      const errorContent = "抱歉，我现在遇到了一些技术问题。请稍后再试，或者检查一下网络连接。如果问题持续存在，可能需要配置 API 密钥。";
+      
+      if (!assistantMessageCreated) {
+        // 如果还没创建消息，创建一个错误消息
+        const errorMessage: Message = {
+          id: assistantMessageId,
+          role: "assistant",
+          content: errorContent,
+          timestamp: new Date(),
+        };
+        setMessages((prev) => [...prev, errorMessage]);
+      } else {
+        // 如果已经创建，更新为错误消息
+        setMessages((prev) =>
+          prev.map((msg) =>
+            msg.id === assistantMessageId
+              ? { ...msg, content: errorContent }
+              : msg
+          )
+        );
+      }
       setIsLoading(false);
     }
   };
