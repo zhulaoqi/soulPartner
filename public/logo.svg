@@ -1,0 +1,68 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景圆形渐变 -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFE5E5;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FFF0E5;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="heartGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF6B9D;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#FFA07A;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FFB88C;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="innerHeartGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFE5E5;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FFF5F0;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- 背景圆 -->
+  <circle cx="256" cy="256" r="240" fill="url(#bgGradient)"/>
+  
+  <!-- 外层心形 -->
+  <path d="M256 420 C 180 360, 120 310, 120 240 C 120 190, 150 160, 190 160 C 215 160, 235 175, 256 200 C 277 175, 297 160, 322 160 C 362 160, 392 190, 392 240 C 392 310, 332 360, 256 420 Z" 
+        fill="url(#heartGradient)" 
+        stroke="#FF9A9E" 
+        stroke-width="4"/>
+  
+  <!-- 内层小心形装饰 -->
+  <path d="M256 240 C 230 220, 210 210, 210 190 C 210 175, 220 165, 235 165 C 245 165, 250 170, 256 180 C 262 170, 267 165, 277 165 C 292 165, 302 175, 302 190 C 302 210, 282 220, 256 240 Z" 
+        fill="url(#innerHeartGradient)" 
+        opacity="0.7"/>
+  
+  <!-- 装饰星星 - 左上 -->
+  <circle cx="140" cy="140" r="8" fill="#FFB88C" opacity="0.6">
+    <animate attributeName="opacity" values="0.6;1;0.6" dur="2s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="140" cy="140" r="4" fill="#FFF" opacity="0.8"/>
+  
+  <!-- 装饰星星 - 右上 -->
+  <circle cx="372" cy="140" r="8" fill="#FF9A9E" opacity="0.6">
+    <animate attributeName="opacity" values="0.6;1;0.6" dur="2.5s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="372" cy="140" r="4" fill="#FFF" opacity="0.8"/>
+  
+  <!-- 装饰星星 - 右侧 -->
+  <circle cx="400" cy="280" r="6" fill="#FFA07A" opacity="0.6">
+    <animate attributeName="opacity" values="0.6;1;0.6" dur="2.2s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="400" cy="280" r="3" fill="#FFF" opacity="0.8"/>
+  
+  <!-- 小爱心装饰 - 飘动效果 -->
+  <g opacity="0.4">
+    <path d="M160 360 C 155 357, 150 355, 150 350 C 150 346, 152 344, 155 344 C 157 344, 158 346, 160 348 C 162 346, 163 344, 165 344 C 168 344, 170 346, 170 350 C 170 355, 165 357, 160 360 Z" 
+          fill="#FF6B9D">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 0,-20; 0,0" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.4;0.8;0.4" dur="3s" repeatCount="indefinite"/>
+    </path>
+  </g>
+  
+  <g opacity="0.4">
+    <path d="M350 380 C 345 377, 340 375, 340 370 C 340 366, 342 364, 345 364 C 347 364, 348 366, 350 368 C 352 366, 353 364, 355 364 C 358 364, 360 366, 360 370 C 360 375, 355 377, 350 380 Z" 
+          fill="#FFA07A">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 0,-25; 0,0" dur="3.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.4;0.8;0.4" dur="3.5s" repeatCount="indefinite"/>
+    </path>
+  </g>
+</svg>
+

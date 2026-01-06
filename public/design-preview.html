@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>心灵陪伴 - 设计资源预览</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+      background: linear-gradient(135deg, #FFE5E5 0%, #FFF0E5 50%, #FFE5F0 100%);
+      padding: 40px 20px;
+      min-height: 100vh;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    h1 {
+      text-align: center;
+      color: #FF6B9D;
+      font-size: 48px;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 4px rgba(255, 107, 157, 0.2);
+    }
+    
+    .subtitle {
+      text-align: center;
+      color: #FFA07A;
+      font-size: 24px;
+      margin-bottom: 60px;
+    }
+    
+    .section {
+      background: white;
+      border-radius: 24px;
+      padding: 40px;
+      margin-bottom: 40px;
+      box-shadow: 0 10px 30px rgba(255, 107, 157, 0.1);
+    }
+    
+    .section h2 {
+      color: #FF6B9D;
+      font-size: 32px;
+      margin-bottom: 30px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    
+    .preview-box {
+      background: linear-gradient(135deg, #FFF5F7 0%, #FFF8F0 100%);
+      border-radius: 16px;
+      padding: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 20px;
+      border: 2px solid #FFE5E5;
+    }
+    
+    .logo-preview {
+      min-height: 300px;
+    }
+    
+    .banner-preview {
+      min-height: 200px;
+      overflow: hidden;
+    }
+    
+    .og-preview {
+      min-height: 300px;
+    }
+    
+    .info {
+      background: #FFF8F0;
+      border-left: 4px solid #FFB88C;
+      padding: 20px;
+      border-radius: 8px;
+      color: #FF6B9D;
+      margin-top: 20px;
+    }
+    
+    .info strong {
+      color: #FF6B9D;
+      display: block;
+      margin-bottom: 8px;
+    }
+    
+    .color-palette {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+    
+    .color-box {
+      text-align: center;
+    }
+    
+    .color-swatch {
+      width: 100%;
+      height: 100px;
+      border-radius: 12px;
+      margin-bottom: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    
+    .color-name {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 4px;
+    }
+    
+    .color-code {
+      font-size: 12px;
+      color: #999;
+      font-family: 'Courier New', monospace;
+    }
+    
+    .usage-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+    
+    .usage-item {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      border: 2px solid #FFE5E5;
+      text-align: center;
+    }
+    
+    .usage-item img {
+      width: 80px;
+      height: 80px;
+      margin-bottom: 12px;
+    }
+    
+    .usage-item h3 {
+      color: #FF6B9D;
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+    
+    .usage-item p {
+      color: #666;
+      font-size: 14px;
+    }
+    
+    footer {
+      text-align: center;
+      margin-top: 60px;
+      color: #FF6B9D;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>💝 心灵陪伴 设计资源</h1>
+    <p class="subtitle">可爱 · 温馨 · 暖暖的设计风格</p>
+    
+    <!-- Logo预览 -->
+    <div class="section">
+      <h2>🎨 Logo设计</h2>
+      <div class="preview-box logo-preview">
+        <img src="logo.svg" alt="心灵陪伴 Logo" style="max-width: 100%; height: auto;">
+      </div>
+      <div class="info">
+        <strong>尺寸</strong> 512x512px（矢量SVG，可无损缩放）<br>
+        <strong>用途</strong> 网站图标、登录页、聊天界面头部<br>
+        <strong>特点</strong> 温暖心形、星星闪烁、小心形飘动动画
+      </div>
+    </div>
+    
+    <!-- Banner预览 -->
+    <div class="section">
+      <h2>🖼️ Banner设计</h2>
+      <div class="preview-box banner-preview">
+        <img src="banner.svg" alt="心灵陪伴 Banner" style="max-width: 100%; height: auto;">
+      </div>
+      <div class="info">
+        <strong>尺寸</strong> 1200x400px<br>
+        <strong>用途</strong> README头图、项目介绍、文档展示<br>
+        <strong>特点</strong> 品牌标识、标语展示、装饰动画
+      </div>
+    </div>
+    
+    <!-- OG图片预览 -->
+    <div class="section">
+      <h2>🌐 社交分享图</h2>
+      <div class="preview-box og-preview">
+        <img src="og-image.svg" alt="OG Image" style="max-width: 100%; height: auto;">
+      </div>
+      <div class="info">
+        <strong>尺寸</strong> 1200x630px（社交媒体最佳尺寸）<br>
+        <strong>用途</strong> Facebook、Twitter、LinkedIn、微信分享预览<br>
+        <strong>特点</strong> 完整品牌信息、特性标签、适合社交平台
+      </div>
+    </div>
+    
+    <!-- 色彩方案 -->
+    <div class="section">
+      <h2>🎨 色彩方案</h2>
+      <div class="color-palette">
+        <div class="color-box">
+          <div class="color-swatch" style="background: #FF6B9D;"></div>
+          <div class="color-name">主色粉</div>
+          <div class="color-code">#FF6B9D</div>
+        </div>
+        <div class="color-box">
+          <div class="color-swatch" style="background: #FFA07A;"></div>
+          <div class="color-name">珊瑚橙</div>
+          <div class="color-code">#FFA07A</div>
+        </div>
+        <div class="color-box">
+          <div class="color-swatch" style="background: #FFB88C;"></div>
+          <div class="color-name">蜜桃色</div>
+          <div class="color-code">#FFB88C</div>
+        </div>
+        <div class="color-box">
+          <div class="color-swatch" style="background: #FF9A9E;"></div>
+          <div class="color-name">活泼粉</div>
+          <div class="color-code">#FF9A9E</div>
+        </div>
+        <div class="color-box">
+          <div class="color-swatch" style="background: #FFE5E5;"></div>
+          <div class="color-name">浅粉</div>
+          <div class="color-code">#FFE5E5</div>
+        </div>
+        <div class="color-box">
+          <div class="color-swatch" style="background: #FFF0E5;"></div>
+          <div class="color-name">杏仁白</div>
+          <div class="color-code">#FFF0E5</div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- 使用场景 -->
+    <div class="section">
+      <h2>📱 使用场景</h2>
+      <div class="usage-grid">
+        <div class="usage-item">
+          <img src="logo.svg" alt="网站图标">
+          <h3>网站Favicon</h3>
+          <p>浏览器标签页图标</p>
+        </div>
+        <div class="usage-item">
+          <img src="logo.svg" alt="登录页">
+          <h3>登录页Logo</h3>
+          <p>欢迎页面主视觉</p>
+        </div>
+        <div class="usage-item">
+          <img src="logo.svg" alt="聊天界面">
+          <h3>聊天界面</h3>
+          <p>导航栏品牌标识</p>
+        </div>
+        <div class="usage-item">
+          <img src="logo.svg" alt="移动端">
+          <h3>移动端应用</h3>
+          <p>PWA应用图标</p>
+        </div>
+      </div>
+    </div>
+    
+    <footer>
+      <p>💝 用设计传递温暖与关怀</p>
+      <p style="font-size: 14px; color: #FFA07A; margin-top: 10px;">
+        所有设计资源均为SVG矢量格式，支持无损缩放
+      </p>
+    </footer>
+  </div>
+</body>
+</html>
+
